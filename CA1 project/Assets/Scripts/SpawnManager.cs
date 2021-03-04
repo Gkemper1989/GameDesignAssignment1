@@ -8,8 +8,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] GameObject[] asteroidPrefabs;
     private float spawnRangeX = 7.0f;
     private float spawnHeight = 6.0f;
-    private float startDelay = 2.0f;
-    private float spawnInterval = 1.5f;
+    private float startDelay = 1f;
+    private float spawnInterval = 1f;
 
     // Start is called before the first frame update
     void Start()
