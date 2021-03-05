@@ -12,10 +12,9 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 1f;
     private float spawnInterval = 1f;
 
-    // Start is called before the first frame update
     void Start()
     {
-    //calling the spawn method with a start delay and a repeat time scope
+    //calling the spawn methods with a start delay and a repeat time scope
         InvokeRepeating("SpawnRandomAsteroids", startDelay, spawnInterval);
         InvokeRepeating("SpawnAstronauts", startDelay, spawnInterval);
     }
