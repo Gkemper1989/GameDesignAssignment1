@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     //Variables
     [SerializeField] GameObject[] asteroidPrefabs;
+    [SerializeField] GameObject astronautPrefabs;
     private float spawnRangeX = 7.0f;
     private float spawnHeight = 6.0f;
     private float startDelay = 1f;
@@ -14,8 +15,9 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //calling the spawn method with a start delay and a repeat time scope
+    //calling the spawn method with a start delay and a repeat time scope
         InvokeRepeating("SpawnRandomAsteroids", startDelay, spawnInterval);
+        InvokeRepeating("SpawnAstronauts", startDelay, spawnInterval);
     }
 
     //Spawning random asteroids from the array in random positions 
@@ -25,5 +27,13 @@ public class SpawnManager : MonoBehaviour
         Vector2 spawnPosition = new Vector2(Random.Range(-spawnRangeX, spawnRangeX), spawnHeight);
 
         Instantiate(asteroidPrefabs[asteroidIndex], spawnPosition, Quaternion.identity);
+    }
+
+    //Spawning astronauts in random positions
+    void SpawnAstronauts()
+    {
+        Vector2 spawnPosition = new Vector2(Random.Range(-spawnRangeX, spawnRangeX), spawnHeight);
+
+        Instantiate(astronautPrefabs, spawnPosition, Quaternion.identity);
     }
 }
